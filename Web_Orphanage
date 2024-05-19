@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orphanage Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 1rem;
+            position: fixed; /* Make the navigation fixed */
+            width: 100%; /* Ensure it spans the full width of the viewport */
+            top: 0; /* Position it at the top */
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 2rem 1rem;
+            margin-top: 4rem; /* Add top margin to offset the fixed nav */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .contact-block {
+            background: #f9f9f9;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 0; /* Reduced padding */
+            font-size: 0.8rem; /* Smaller font size */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .background-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .background-section .bg-image {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/800x400') no-repeat center center/cover;
+            transition: left 2s ease-in-out;
+        }
+        .background-section.show .bg-image {
+            left: 0;
+        }
+        .background-section .content {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            margin-top: 300px; /* Adjust based on the height of the background image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section containing the logo and title -->
+    <header>
+        <img src="https://via.placeholder.com/100x50" alt="Orphanage Logo">
+        <h1>Welcome to Our Orphanage</h1>
+    </header>
+    <!-- Navigation menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contacts">Contacts</a>
+    </nav>
+    <!-- Home section with background image and introductory content -->
+    <section id="home" class="background-section">
+        <div class="bg-image"></div>
+        <div class="content container">
+            <h2>Home</h2>
+            <p>Welcome to our orphanage. We provide a safe and nurturing environment for children who need a home. Our mission is to support and care for these children, providing them with the opportunities they need to thrive.</p>
+        </div>
+    </section>
+    <!-- About section with information about the orphanage -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Our orphanage was established in 1990 with the goal of offering a supportive environment for children without families. Over the years, we have grown and now support over 100 children, providing them with education, healthcare, and a loving community.</p>
+            <p>Our staff is dedicated to ensuring each child feels valued and has the resources they need to reach their full potential. We believe every child deserves a chance at a bright future.</p>
+        </div>
+    </section>
+    <!-- Gallery section displaying images related to the orphanage -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 1">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 2">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 3">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 4">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 5">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 6">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 7">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 8">
+                <img src="https://via.placeholder.com/800x400" alt="Orphanage image 9">
+            </div>
+        </div>
+    </section>
+    <!-- Contacts section with contact information -->
+    <section id="contacts">
+        <div class="container">
+            <h2>Contacts</h2>
+            <div class="contact-block">
+                <p>If you would like to get in touch with us, please use the following contact information:</p>
+                <p>Email: info@orphanage.org</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Orphanage Lane, City, Country</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer with copyright information -->
+    <footer>
+        <p>&copy; 2024 Our Orphanage. All rights reserved.</p>
+    </footer>
+    <!-- Script to animate the background image on page load -->
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('#home').classList.add('show');
+        });
+    </script>
+</body>
+</html>
